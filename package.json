@@ -1,0 +1,30 @@
+{
+  "name": "occ-flowers-images",
+  "version": "1.0.0",
+  "description": "Generate PNGs and GIFs using on-chain data from OCC Flowers NFT",
+  "main": "index.js",
+  "scripts": {
+    "make-pngs": "node make-pngs.js",
+    "make-gifs": "node make-gifs.js",
+    "host-ipfs": "node host-ipfs.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samkingco/occ-flowers-images.git"
+  },
+  "author": "Sam King",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samkingco/occ-flowers-images/issues"
+  },
+  "homepage": "https://github.com/samkingco/occ-flowers-images#readme",
+  "dependencies": {
+    "axios": "^0.22.0",
+    "cli-progress": "^3.9.1",
+    "dotenv": "^10.0.0",
+    "form-data": "^4.0.0",
+    "gifencoder": "^2.0.1",
+    "png-js": "^1.0.0",
+    "puppeteer": "^10.4.0"
+  }
+}

@@ -6,6 +6,7 @@
   "scripts": {
     "make-pngs": "node make-pngs.js",
     "make-gifs": "node make-gifs.js",
+    "make-svgs": "node make-svgs.js",
     "host-ipfs": "node host-ipfs.js"
   },
   "repository": {

@@ -36,13 +36,29 @@ async function pinFileToIPFS(fileName) {
   for (const [tokenId, token] of Object.entries(flowers)) {
     imageData[tokenId] = {
       base64: token.image,
+      svg: null,
       png: null,
-      giff: null,
+      gif: null,
     };
   }
 
+  const svgPaths = fs.readdirSync(path.join(process.cwd(), src, "svgs"));
   const pngPaths = fs.readdirSync(path.join(process.cwd(), src, "pngs"));
   const gifPaths = fs.readdirSync(path.join(process.cwd(), src, "gifs"));
+
+  for (const svg of svgPaths) {
+    const fileName = path.basename(svg);
+    const tokenId = fileName.replace(".svg", "");
+
+    console.log(`Uploading svg for flower #${tokenId}`);
+    const res = await pinFileToIPFS(`svgs/${fileName}`);
+    const data = res.data;
+
+    imageData[parseInt(tokenId, 10)] = {
+      ...imageData[parseInt(tokenId, 10)],
+      svg: data.IpfsHash,
+    };
+  }
 
   for (const png of pngPaths) {
     const fileName = path.basename(png);

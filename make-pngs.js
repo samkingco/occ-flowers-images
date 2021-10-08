@@ -10,7 +10,7 @@ const PNG_DIMENSION = 2048;
 
 (async () => {
   const flowersData = fs.readFileSync(
-    path.join(process.cwd(), "./output/flowers.json")
+    path.join(process.cwd(), "input/flowers.json")
   );
   const flowers = JSON.parse(flowersData);
 

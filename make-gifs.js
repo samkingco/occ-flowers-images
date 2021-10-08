@@ -28,7 +28,7 @@ function lerp(input, output, progress) {
 (async () => {
   // Load the data
   const flowersData = fs.readFileSync(
-    path.join(process.cwd(), "./input/flowers.json")
+    path.join(process.cwd(), "input/flowers.json")
   );
   const flowers = JSON.parse(flowersData);
 
